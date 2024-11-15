@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camisa do Santos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="image">
+               <img class="product-image" src="https://imgcentauro-a.akamaihd.net/768x768/98756431A7.jpg" alt="">
+            </div>
+            <div class="zoom-container">
+                <img src="" alt="" class="zoom-img">  
+              </div>
+            <div class="color">
+                <span class="white active" data-image="https://imgcentauro-a.akamaihd.net/768x768/98756431A7.jpg" data-color="#EDEDED"></span>
+                <span class="black" data-image="https://imgcentauro-a.akamaihd.net/768x768/M111ST02.jpg" data-color="#232323"></span>
+                <span class="yellow" data-image="https://imgcentauro-a.akamaihd.net/768x768/M15LVG08.jpg" data-color="#fee824"></span>
+                <span class="pink" data-image="https://imgcentauro-a.akamaihd.net/768x768/M125NIEZ.jpg" data-color="#de2f95"></span>
+            </div>
+            <div class="title">
+                Camisa do Santos
+            </div>
+            <div class="detai">
+                <p>Preço : <span>R$150</span></p>
+                <a href="#">Adicione no Carrinho</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="   
+ crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://unpkg.com/smooth-scroll@latest/dist/smooth-scroll.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $(".color span").click(function () {
+
+            $(".color span").removeClass("active");
+            $(this).addClass("active");
+            $(".detail span").css("color", $(this).attr("data-color"));
+            $(".detail a").css("background", $(this).attr("data-color"));
+            $(".product-image").attr("src", $(this).attr("data-image"));
+            $("body").css("background", $(this).attr("data-color"));
+        });
+        $(".product-image").hover(function () {
+        // Mostrar a caixa de zoom ao passar o mouse
+        $(".zoom-container").addClass("active");
+      
+        // Atualizar a origem da imagem ampliada com base na imagem do produto atual
+        $(".zoom-img").attr("src", $(this).attr("src"));
+      }, function () {
+        // Ocultar a caixa de zoom ao sair do mouse
+        $(".zoom-container").removeClass("active");
+      });
+      
+    </script>
+
+    <script>
+    $(".product-image").hover(function () {
+        // Mostrar a caixa de zoom ao passar o mouse
+        $(".zoom-container").addClass("active");
+      
+        // Atualizar a origem da imagem ampliada com base na imagem do produto atual
+        $(".zoom-img").attr("src", $(this).attr("src"));
+      }, function () {
+        // Ocultar a caixa de zoom ao sair do mouse
+        $(".zoom-container").removeClass("active");
+      });
+      </script>
+
+</body>
+
+</html>
